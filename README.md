@@ -1,15 +1,15 @@
- Project Title:
+# Project Title:
  
 RCB vs PBKS – Match Recap & Fan Poll Website (LocalStorage-based Web App)
 
- Overview:
+# Overview:
  
 This project is a dynamic and visually engaging website dedicated to the IPL match between Royal Challengers Bangalore (RCB) and Punjab Kings (PBKS). It features a match recap, individual team profiles, and an interactive fan poll system that stores and displays poll results using the browser's localStorage.
 
 Designed using HTML, CSS, and JavaScript, this project is entirely frontend-based, meaning no backend or database is required. It provides a seamless and responsive user experience, making it ideal for sports fan engagement and showcasing web development skills.
 
 
- Methodology:
+# Methodology:
  
 HTML Pages:
 
@@ -41,14 +41,14 @@ Navigation between pages with smooth user flow.
 Used to persist fan votes and update poll results without needing a server.
 
 
- How to Run the Project:
+# How to Run the Project:
  
 
 Download or clone the project and open `index.html` in your browser to start the app.  
 No setup needed — everything runs offline using HTML, CSS, JavaScript, and LocalStorage.
 
 
- Result:
+# Result:
  
 Fan votes are stored in the browser using localStorage.
 
