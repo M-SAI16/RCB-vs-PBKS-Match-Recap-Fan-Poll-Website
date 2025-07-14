@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RCB - TATA IPL 2025 Champions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #8b0000, #ffc107);
+      color: #f8f9fa;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1a1a2e;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #f72585;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      color: #adb5bd;
+      margin-bottom: 0.3rem;
+    }
+
+    .slogan {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffe600;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #00f5d4;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+
+    li {
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .image-card {
+      background-color: #1e1e2f;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .image-card img:hover {
+      transform: scale(1.07);
+    }
+
+    .image-card p {
+      padding: 1.1rem;
+      font-size: 0.95rem;
+      color: #dee2e6;
+    }
+
+    /* Overlay Popup Styles */
+    .overlay {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 6px solid #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .overlay .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #121212;
+      text-align: center;
+      padding: 1.5rem 0;
+      color: #888;
+    }
+
+    footer a {
+      color: #00f5d4;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🏆 TATA IPL 2025 CHAMPIONS – Royal Challengers Bengaluru</h1>
+    <p>RCB clinches their maiden IPL title in a thrilling final against PBKS!</p>
+    <div class="slogan">🔥 ISALA CUP NAMDU 🔥</div>
+  </header>
+
+  <main>
+
+    <section>
+      <h2> Match Summary – June 3, 2025</h2>
+      <p>
+        In a historic IPL 2025 final at the Narendra Modi Stadium, Ahmedabad, Royal Challengers Bengaluru (RCB) secured their first-ever IPL title by defeating Punjab Kings (PBKS) by 6 runs. Batting first, RCB posted a total of 190/9, with Virat Kohli contributing a steady 43 off 35 balls. Despite a valiant effort from PBKS's Shashank Singh, who scored an unbeaten 61 off 30 balls, RCB's disciplined bowling attack, led by Krunal Pandya's 2/17, managed to restrict PBKS to 184/7, sealing a memorable victory.
+      </p>
+    </section>
+
+    <section>
+      <h2> Match Highlights 🔥</h2>
+      <ul>
+        <li>Virat Kohli top-scored for RCB with 43 runs, becoming the highest boundary-hitter in IPL history with 771 fours.</li>
+        <li>Krunal Pandya delivered a match-winning performance, taking 2 wickets for just 17 runs and earning the Player of the Match award.</li>
+        <li>Shashank Singh's explosive 61* off 30 balls kept PBKS in the hunt until the final over.</li>
+        <li>RCB's bowlers, including Bhuvneshwar Kumar and Josh Hazlewood, maintained tight lines to defend the total successfully.</li>
+        <li>Emotional scenes unfolded as Virat Kohli broke down in tears, celebrating RCB's maiden IPL triumph after 18 years.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2> Trophy Celebration</h2>
+      <div class="image-gallery">
+        <div class="image-card" onclick="openImage('images/rcb trophy.jpg')">
+          <img src="images/rcb trophy.jpg" alt="RCB lifting the IPL 2025 trophy">
+          <p>Virat Kohli and the RCB team celebrate their historic IPL 2025 victory.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <a href="rcb.html">View RCB Players</a> |
+    <a href="pbks.html">View PBKS Players</a> |
+    <a href="poll.html">polling</a> |
+    <a href="results.html">Poll Results</a>
+  </footer>
+
+  <!-- Overlay Popup -->
+  <div id="popup" class="overlay" onclick="closePopup()">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" src="" alt="Zoomed Image">
+  </div>
+
+  <script>
+    function openImage(src) {
+      document.getElementById('popup-img').src = src;
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

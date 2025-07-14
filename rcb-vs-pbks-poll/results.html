@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poll Results - RCB vs PBKS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1b1b2f, #4c3b8d);
+      color: #f0f0f5;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f72585;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .results-container {
+      max-width: 800px;
+      margin: auto;
+      background: linear-gradient(to bottom right, #2a2a40, #3f37c9);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(98, 0, 234, 0.3);
+    }
+
+    .result-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .result-section h2 {
+      font-size: 1.3rem;
+      color: #00f5d4;
+      margin-bottom: 1rem;
+    }
+
+    .bar-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      gap: 10px;
+    }
+
+    .bar-label {
+      width: 200px;
+      font-size: 1rem;
+    }
+
+    .bar {
+      flex-grow: 1;
+      height: 28px;
+      background: linear-gradient(to right, #7209b7, #f72585);
+      border-radius: 8px;
+      text-align: right;
+      padding-right: 8px;
+      color: white;
+      font-size: 0.9rem;
+      line-height: 28px;
+      transition: width 1s ease-in-out;
+      min-width: 40px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .footer a {
+      color: #80ffdb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+      color: #f0f0f5;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 Poll Results - RCB vs PBKS</h1>
+
+  <div class="results-container">
+
+    <div class="result-section">
+      <h2>🏆 Man of the Match</h2>
+      <div class="bar-wrapper">
+        <div class="bar-label">Krunal Pandya</div>
+        <div class="bar" id="Krunal Pandya"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label">Bhuvaneshwar Kumar</div>
+        <div class="bar" id="Bhuvaneshwar Kumar"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label">Yash Dayal</div>
+        <div class="bar" id="Yash Dayal"></div>
+      </div>
+    </div>
+
+    <div class="result-section">
+      <h2>🎯 Best Moment of the Match</h2>
+      <div class="bar-wrapper">
+        <div class="bar-label">Jitesh’s massive six</div>
+        <div class="bar" id="Jitesh’s massive six"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label">Livingstone’s brilliant catch</div>
+        <div class="bar" id="Livingstone’s brilliant catch"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label">Arshdeep’s Triple Treat</div>
+        <div class="bar" id="Arshdeep’s Triple Treat"></div>
+      </div>
+    </div>
+
+    <div class="result-section">
+      <h2>🔁 Should RCB Retain This Player?</h2>
+      <div class="bar-wrapper">
+        <div class="bar-label">Yes</div>
+        <div class="bar" id="Yes"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label">No</div>
+        <div class="bar" id="No"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label">Not Sure</div>
+        <div class="bar" id="Not Sure"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>🔙 <a href="poll.html">Back to Poll</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    const voteKeys = {
+      motmVote: ["Krunal Pandya", "Bhuvaneshwar Kumar", "Yash Dayal"],
+      momentVote: ["Jitesh’s massive six", "Livingstone’s brilliant catch", "Arshdeep’s Triple Treat"],
+      retainVote: ["Yes", "No", "Not Sure"]
+    };
+
+    const votes = {
+      "Krunal Pandya": 0,
+      "Bhuvaneshwar Kumar": 0,
+      "Yash Dayal": 0,
+      "Jitesh’s massive six": 0,
+      "Livingstone’s brilliant catch": 0,
+      "Arshdeep’s Triple Treat": 0,
+      "Yes": 0,
+      "No": 0,
+      "Not Sure": 0
+    };
+
+    // Load votes from localStorage
+    for (let category in voteKeys) {
+      const selected = localStorage.getItem(category);
+      if (selected && votes[selected] !== undefined) {
+        votes[selected]++;
+      }
+    }
+
+    function getTotal(options) {
+      return options.reduce((sum, key) => sum + votes[key], 0);
+    }
+
+    function renderBar(id, value, total) {
+      const bar = document.getElementById(id);
+      const percent = total > 0 ? Math.round((value / total) * 100) : 0;
+      bar.style.width = percent + "%";
+      bar.innerText = `${percent}%`;
+    }
+
+    voteKeys.motmVote.forEach(key => renderBar(key, votes[key], getTotal(voteKeys.motmVote)));
+    voteKeys.momentVote.forEach(key => renderBar(key, votes[key], getTotal(voteKeys.momentVote)));
+    voteKeys.retainVote.forEach(key => renderBar(key, votes[key], getTotal(voteKeys.retainVote)));
+  </script>
+
+</body>
+</html>

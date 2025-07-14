@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RCB vs PBKS - Fan Poll</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1c1b2f, #3a0ca3);
+      color: #f0f0f5;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f72585;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .poll-container {
+      max-width: 820px;
+      margin: auto;
+      background: linear-gradient(to bottom right, #2a2a40, #4c3b8d);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(98, 0, 234, 0.3);
+    }
+
+    .poll-question {
+      margin-bottom: 2rem;
+    }
+
+    .poll-question h2 {
+      font-size: 1.3rem;
+      color: #00f5d4;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin: 0.6rem 0;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    label:hover {
+      color: #ffd6ff;
+    }
+
+    input[type="radio"] {
+      margin-right: 12px;
+      accent-color: #f72585;
+      transform: scale(1.2);
+      cursor: pointer; /* 👈 Cursor as hand on radio input */
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #7209b7, #f72585);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #560bad, #c9184a);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .footer a {
+      color: #80ffdb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+      color: #f0f0f5;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🗳️ RCB vs PBKS - Fan Poll</h1>
+
+  <div class="poll-container">
+
+    <div class="poll-question">
+      <h2>🏆 Who was your Man of the Match?</h2>
+      <label><input type="radio" name="motm" value="Krunal Pandya">Krunal Pandya</label>
+      <label><input type="radio" name="motm" value="Bhuvaneshwar Kumar">Bhuvaneshwar Kumar</label>
+      <label><input type="radio" name="motm" value="Yash Dayal">Yash Dayal</label>
+    </div>
+
+    <div class="poll-question">
+      <h2>🎯 Best Moment of the Match?</h2>
+      <label><input type="radio" name="moment" value="Six">Jitesh’s massive six</label>
+      <label><input type="radio" name="moment" value="Catch">Livingstone’s brilliant catch</label>
+      <label><input type="radio" name="moment" value="Over">Arshdeep’s Triple Treat</label>
+    </div>
+
+    <div class="poll-question">
+      <h2>🔁 Should RCB retain this player next season?</h2>
+      <label><input type="radio" name="retain" value="Yes">Yes</label>
+      <label><input type="radio" name="retain" value="No">No</label>
+      <label><input type="radio" name="retain" value="Not Sure">Not Sure</label>
+    </div>
+
+    <button onclick="submitPoll()">Submit Your Vote</button>
+
+    <div class="footer">
+      <p>📊 <a href="results.html">View Poll Results</a></p>
+    </div>
+  </div>
+
+  <script>
+    function submitPoll() {
+      const motm = document.querySelector('input[name="motm"]:checked');
+      const moment = document.querySelector('input[name="moment"]:checked');
+      const retain = document.querySelector('input[name="retain"]:checked');
+
+      if (!motm || !moment || !retain) {
+        alert("Please answer all questions before submitting.");
+        return;
+      }
+
+      localStorage.setItem("motmVote", motm.value);
+      localStorage.setItem("momentVote", moment.value);
+      localStorage.setItem("retainVote", retain.value);
+
+      alert("Thank you for voting!");
+      window.location.href = "results.html";
+    }
+  </script>
+
+</body>
+</html>

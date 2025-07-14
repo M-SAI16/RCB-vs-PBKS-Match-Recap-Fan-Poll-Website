@@ -1,0 +1,138 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f2f6;
+  color: #222;
+}
+
+/* Team Header */
+.team-header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 20px;
+}
+
+.logo-left img {
+  height: 180px; /* Increased size */
+  margin-right: 20px;
+}
+
+.team-text h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.team-text p {
+  font-size: 16px;
+  margin: 3px 0;
+}
+
+/* Squad Section */
+.squad-section {
+  padding: 20px 40px;
+  background-color: #ffffff;  /* White background */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 60px;
+  max-width: 1200px;
+  color: #222;
+}
+
+.squad-section h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  color: #003366; /* Dark blue headings for contrast */
+}
+
+/* Player Cards Grid */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Player Card Styling */
+.player-card {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  background-color: #ffffff; /* White cards */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: #222;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.player-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.player-card h3 {
+  margin: 12px 0 6px;
+  font-size: 20px;
+  color: #222;
+  font-weight: 700;
+}
+
+.player-card p {
+  margin: 0 0 15px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Icon badges (captain, wicketkeeper, etc.) */
+.player-card::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #e74c3c;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50%;
+  display: none;
+  line-height: 1;
+  text-align: center;
+  min-width: 22px;
+  min-height: 22px;
+  user-select: none;
+}
+
+.player-card.captain::before {
+  content: 'C';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-card.wicketkeeper::after {
+  content: '🧤';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  user-select: none;
+}
