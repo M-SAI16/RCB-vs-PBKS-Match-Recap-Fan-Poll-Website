@@ -42,12 +42,14 @@ Used to persist fan votes and update poll results without needing a server.
 
 
  How to Run the Project:
+ 
 
 Download or clone the project and open `index.html` in your browser to start the app.  
 No setup needed — everything runs offline using HTML, CSS, JavaScript, and LocalStorage.
 
 
  Result:
+ 
 Fan votes are stored in the browser using localStorage.
 
 Results page (results.html) dynamically displays total votes per team.
